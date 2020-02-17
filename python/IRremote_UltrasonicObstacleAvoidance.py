@@ -117,15 +117,15 @@ try:
                     Ab.setPWMB(PWM)
                     print(PWM)
         else:
-           if dist < 20:
-            n = 0
-            Ab.stop()
-            print("run into obstabcle")
-           else:     
-            n += 1
-            if n > 20000:
+            if dist < 20:
                 n = 0
-                Ab.stop()   
+                Ab.stop()
+                print("run into obstabcle")
+            else:     
+                n += 1
+                if n > 20000:
+                    n = 0
+                    Ab.stop()   
 except KeyboardInterrupt:
     GPIO.cleanup();
 
